@@ -1,56 +1,46 @@
 <template>
-  <el-container>
-    <el-aside width="200px">
-      <aside-menu/>
-    </el-aside>
-    <el-container>
-      <el-header>Header</el-header>
-      <el-main>Main</el-main>
-      <el-footer>Footer</el-footer>
-    </el-container>
-  </el-container>
+  <!-- <div id="nav">
+    <router-link to="/">Home</router-link> |
+    <router-link to="/test1">About</router-link>
+  </div>
+  <router-view/> -->
+  <on-index/>
 </template>
 
 <script>
-import AsideMenu from './components/AsideMenu.vue'
-export default {
-  name: "App",
+import OnIndex from './components/OnIndex.vue'
+
+export default ({
   components: {
-    AsideMenu
+    OnIndex
   },
-};
+  setup() {
+    
+  },
+})
 </script>
 
+
+
 <style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: Helvetica, "PingFang SC", "Microsoft Yahei", sans-serif;
-}
-.el-container {
-  width: 100vw;
-  min-height: 100vh;
-}
-.el-header,
-.el-footer {
-  background-color: #b3c0d1;
-  color: var(--el-text-color-primary);
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  line-height: 60px;
+  color: #2c3e50;
 }
 
-.el-aside {
-  background-color: #d3dce6;
-  color: var(--el-text-color-primary);
-  text-align: center;
-  line-height: 200px;
+#nav {
+  padding: 30px;
 }
 
-.el-main {
-  background-color: #e9eef3;
-  color: var(--el-text-color-primary);
-  text-align: center;
-  line-height: 160px;
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#nav a.router-link-exact-active {
+  color: #42b983;
 }
 </style>
