@@ -1,26 +1,56 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <el-container>
+    <el-aside width="200px">
+      <aside-menu/>
+    </el-aside>
+    <el-container>
+      <el-header>Header</el-header>
+      <el-main>Main</el-main>
+      <el-footer>Footer</el-footer>
+    </el-container>
+  </el-container>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import AsideMenu from './components/AsideMenu.vue'
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    AsideMenu
+  },
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica, "PingFang SC", "Microsoft Yahei", sans-serif;
+}
+.el-container {
+  width: 100vw;
+  min-height: 100vh;
+}
+.el-header,
+.el-footer {
+  background-color: #b3c0d1;
+  color: var(--el-text-color-primary);
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  line-height: 60px;
+}
+
+.el-aside {
+  background-color: #d3dce6;
+  color: var(--el-text-color-primary);
+  text-align: center;
+  line-height: 200px;
+}
+
+.el-main {
+  background-color: #e9eef3;
+  color: var(--el-text-color-primary);
+  text-align: center;
+  line-height: 160px;
 }
 </style>
